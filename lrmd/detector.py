@@ -79,6 +79,7 @@ def get_dp_info_parallel(ctgs, bam_in, threads, out_dir, DP_WIN_SIZE, Block_size
     dpinfo_dic = {}
     
     for ctg, ctg_len in ctgs:
+        ctg_dp_ls = dp_dic[ctg]
         dpinfo_dic[ctg] = Depth_info(ctg, ctg_len, ctg_dp_ls, DP_WIN_SIZE, Block_size, whole_dp)
     
     return dpinfo_dic
